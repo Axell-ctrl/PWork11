@@ -32,22 +32,22 @@ namespace Практическая_работа__11
                     // Проверяем, что строка не пустая и её длина чётная
                     if (!string.IsNullOrEmpty(input) && input.Length % 2 == 0)
                     {
-                        // Находим индекс первого среднего символа и берем 2 знака
-                        string result = input.Substring(input.Length / 2 - 1, 2);
+                        //вывод при помощи конкатенации элементов массива
+                        char[] arr_input = input.ToCharArray();//перевод строки в массив с помощью метода ToCharArray
+                        string result = String.Concat(arr_input[arr_input.Length / 2 - 1], arr_input[arr_input.Length / 2]);//конкатенация двух средних символов в массиве
 
-                        Console.WriteLine($"Два средних знака: {result}");
+                        //вывод при помощи метода SubString
+                        //string result = input.Substring(input.Length / 2 - 1, 2);
+
+                        Console.WriteLine($"Результат: {result}");//вывод двух средних символов в строке
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Ошибка: строка должна иметь четную длину и не быть пустой!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        continue;
                     }
-                }
-                catch (FormatException fex)//обработчик исключения FormatException (входная строка имела неправильный формат)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"Что-то пошло не так! Ошибка: {fex.Message} Попробуйте ещё раз.");//Вывод текста с помощью интерполяции: Что-то пошло не так! Ошибка: Входная строка имела неправильный формат. 
-                    Console.ForegroundColor = ConsoleColor.White;
-                    continue;
                 }
                 catch (Exception ex)//обработка исключения Exception (все ошибки в целом)
                 {
