@@ -31,7 +31,7 @@ namespace Практическая_работа__11
                     string input = Console.ReadLine();
 
                     // Проверяем, что строка не пустая и её длина чётная
-                    if (!string.IsNullOrEmpty(input) && input.Length % 2 == 0)
+                    if (!String.IsNullOrWhiteSpace(input) && input.Length % 2 == 0)
                     {
                         //вывод при помощи конкатенации элементов массива
                         //char[] arrInput = input.ToCharArray();//перевод строки в массив с помощью метода ToCharArray
