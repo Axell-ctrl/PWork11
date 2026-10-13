@@ -20,6 +20,7 @@ namespace Практическая_работа__11
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
             Console.Title = "Практическая работа №11";
+            Console.WriteLine("Здравствуйте!");
 
             bool exitProgram = false;
             while (true)
@@ -32,7 +33,11 @@ namespace Практическая_работа__11
                     // Проверяем, что строка не пустая и её длина чётная
                     if (!string.IsNullOrEmpty(input) && input.Length % 2 == 0)
                     {
-                        //вывод при помощи метода SubString
+                        //вывод при помощи конкатенации элементов массива
+                        //char[] arrInput = input.ToCharArray();//перевод строки в массив с помощью метода ToCharArray
+                        //string result = String.Concat(arr_input[arrInput.Length / 2 - 1], arrInput[arrInput.Length / 2]);//конкатенация двух средних символов в массиве
+                        
+                        //результат инициализируется при помощи input.SubString
                         string result = input.Substring(input.Length / 2 - 1, 2);
 
                         Console.WriteLine($"Результат: {result}");//вывод двух средних символов в строке
